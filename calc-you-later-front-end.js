@@ -1,5 +1,5 @@
 // Grab the calculate function from our other file. Imports can be tricky at first, so this one's a gimme!
-const calculate = require('./calculate')
+const calculate = require('./calc-you-later-back-end')
 
 
 // For the following steps, write the code, like the example above, DIRECTLY
@@ -34,25 +34,17 @@ const calculate = require('./calculate')
 
 // Here we store what's in those process.argv indices in well-named variables.
 const num1 = process.argv[2];
-let num2 = process.argv[4];
-let operation = process.argv[3];
+const num2 = process.argv[4];
+const operation = process.argv[3];
 
+// Stretch goal version:
+// const firstNumberIndex = process.argv.findIndex((value) => !isNaN(value))
+// const lastIndex = process.argv.length - 1;
+// const words = process.argv.slice(firstNumberIndex + 1, lastIndex);
 
-//As a stretch goal--done after everything else works!--the code below reassigns
-// the second number and operation variables to the values held in alternate
-// process.argv indices.
-
-// This is to allow for someone to type in two words for operations, like
-// "divided by" or "subtracted from". Those two-word operations are
-// space-separated, which means node reads them in as separate strings. We first
-// have to detect whether those extra strings are in there, though! Several ways
-// to do this.
-
-// And we can't forget to put the space back in our two-word operation, as that's how calculate is expecting to receive it!
-if (isNaN(num2) && !isNaN(process.argv[5])) {
-  operation = process.argv[3] + ' ' + process.argv[4];
-  num2 = process.argv[5];
-}
+// const num1 = process.argv[firstNumberIndex];
+// const num2 = process.argv[lastIndex];
+// const operation = words.join(' ');
 
 
 // Store the return value of our calculate function, making sure to feed it the correct values from our user input.

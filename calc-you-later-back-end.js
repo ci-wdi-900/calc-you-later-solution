@@ -2,6 +2,8 @@
  * YOUR CODE HERE *
  ******************/
 
+//  Takes in two numbers and a string representing an operation.
+// function calculate(num1: number, num2: number, operation: string): number
 function calculate(num1, num2, operation) {
   num1 = Number(num1);
   num2 = Number(num2);
